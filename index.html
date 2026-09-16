@@ -305,13 +305,59 @@
           </div>
         </div>
 
-        <!-- 3. MACHINE LEARNING -->
+<!-- 3. MACHINE LEARNING -->
         <div id="ml" class="content-panel">
           <h2 class="section-heading"><i class="fas fa-brain me-2"></i>Machine Learning & Advanced Analytics</h2>
           
           <div class="item-card">
-            <div class="item-title">Supervised & Unsupervised Industrial ML</div>
-            <p>Applied classification algorithms to detect water-bitumen interface levels in oil sands primary separation vessels and developed PCA/Slow Feature Analysis (SFA) models for fault detection in rotating equipment.</p>
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <div>
+                <div class="item-title">Primary Separation Vessel (PSV) Water-Bitumen Interface Prediction</div>
+                <div class="item-subtitle">Supervised Learning & RPLS Soft-Sensing | Oil Sands Separation</div>
+              </div>
+              <span class="badge bg-success">Live Simulation Demo</span>
+            </div>
+
+            <p class="text-light">
+              Real-time soft-sensor estimation and 60-minute ahead predictive modeling of the water-bitumen interface level inside a Primary Separation Vessel (PSV). Using <strong>Recursive Partial Least Squares (RPLS)</strong> fused with density and temperature sensor arrays, the system accurately tracks froth/middling interface movement even when physical cameras are offline.
+            </p>
+
+            <!-- EMBEDDED ANIMATED GIF DEMO -->
+            <div class="my-3 text-center p-3 rounded" style="background-color: #0b1329; border: 1px solid var(--border-color);">
+              <img src="PSV.gif" alt="PSV Interface Level RPLS Prediction Demo" class="img-fluid rounded border" style="max-height: 480px; width: 100%; object-fit: contain;">
+              <div class="mt-2 text-muted small">
+                <i class="fas fa-play-circle me-1 text-success"></i> <strong>Live Simulation:</strong> Real-time comparison between Camera Reference (Red) vs. RPLS Predicted Interface Level (Blue) alongside density & temperature profiles.
+              </div>
+            </div>
+
+            <div class="row g-2 mt-2">
+              <div class="col-md-4">
+                <div class="p-2 border rounded bg-dark text-center">
+                  <div class="small text-muted">Mean Absolute Error (MAE)</div>
+                  <strong class="text-info">0.10311</strong>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="p-2 border rounded bg-dark text-center">
+                  <div class="small text-muted">Standard Deviation Error</div>
+                  <strong class="text-info">7.597 %</strong>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="p-2 border rounded bg-dark text-center">
+                  <div class="small text-muted">Prediction Correlation (IF, IF_pred)</div>
+                  <strong class="text-success">0.80757</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-3">
+              <span class="tag-badge">RPLS / Soft Sensors</span>
+              <span class="tag-badge">Process Control</span>
+              <span class="tag-badge">Supervised ML</span>
+              <span class="tag-badge">Sensor Fusion</span>
+              <span class="tag-badge">MATLAB / Python</span>
+            </div>
           </div>
 
           <div class="item-card">
