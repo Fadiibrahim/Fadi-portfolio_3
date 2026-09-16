@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fadi Ibrahim, Ph.D., P.Eng. - Executive Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg-dark: #0f172a;
+      --card-bg: #1e293b;
+      --sidebar-btn: #155e75;
+      --sidebar-btn-hover: #0e7490;
+      --sidebar-btn-active: #0284c7;
+      --accent-green: #10b981;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border-color: #334155;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      min-height: 100vh;
+    }
+
+    /* HEADER */
+    .header-box {
+      background-color: #0b1329;
+      border: 1px solid var(--border-color);
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 25px;
+    }
+    .header-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 15px;
+    }
+    .badge-btn {
+      background-color: #1e293b;
+      color: var(--text-muted);
+      border: 1px solid var(--border-color);
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin-right: 8px;
+      display: inline-block;
+      transition: all 0.2s ease;
+    }
+    .badge-btn:hover {
+      color: var(--accent-green);
+      border-color: var(--accent-green);
+    }
+
+    /* NAVIGATION BUTTONS */
+    .nav-btn {
+      background-color: var(--sidebar-btn);
+      color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      padding: 16px 20px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-align: center;
+      width: 100%;
+      margin-bottom: 12px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    }
+    .nav-btn:hover {
+      background-color: var(--sidebar-btn-hover);
+      transform: translateY(-2px);
+    }
+    .nav-btn.active {
+      background-color: var(--sidebar-btn-active);
+      border-left: 5px solid var(--accent-green);
+      box-shadow: 0 0 12px rgba(16, 185, 129, 0.4);
+    }
+
+    /* CONTENT DISPLAY CARDS */
+    .content-panel {
+      display: none;
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    }
+    .content-panel.active {
+      display: block;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-heading {
+      color: var(--accent-green);
+      font-weight: 700;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 10px;
+      margin-bottom: 25px;
+    }
+
+    /* CARD STYLING INSIDE PANELS */
+    .item-card {
+      background-color: #0f172a;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .item-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #38bdf8;
+    }
+    .item-subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+    .tag-badge {
+      background-color: #0284c7;
+      color: #ffffff;
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-right: 5px;
+    }
+    .media-box {
+      background-color: #1e293b;
+      border: 1px dashed var(--border-color);
+      border-radius: 6px;
+      padding: 20px;
+      text-align: center;
+      color: var(--text-muted);
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container-fluid py-4 px-md-5">
+    
+    <!-- HEADER BOX -->
+    <div class="header-box text-center">
+      <h1 class="header-title">Fadi Ibrahim, Ph.D., P.Eng.</h1>
+      <div>
+        <a href="mailto:ibrahim.fadi@gmail.com" class="badge-btn"><i class="fas fa-envelope me-2"></i>Email</a>
+        <a href="https://linkedin.com/in/fadi-ibrahim" target="_blank" class="badge-btn"><i class="fab fa-linkedin me-2"></i>LinkedIn</a>
+        <a href="https://orcid.org/0000-0002-8380-2783" target="_blank" class="badge-btn"><i class="fas fa-graduation-cap me-2"></i>ORCID</a>
+        <span class="badge-btn"><i class="fas fa-map-marker-alt me-2"></i>Edmonton, AB</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- SIDEBAR NAVIGATION MENU -->
+      <div class="col-lg-3 col-md-4 mb-4">
+        <button class="nav-btn active" onclick="showPanel('exp', this)">Professional Experience</button>
+        <button class="nav-btn" onclick="showPanel('projects', this)">All Projects</button>
+        <button class="nav-btn" onclick="showPanel('ml', this)">Machine Learning</button>
+        <button class="nav-btn" onclick="showPanel('domains', this)">Industrial Domains</button>
+        <button class="nav-btn" onclick="showPanel('education', this)">Education</button>
+        <button class="nav-btn" onclick="showPanel('publications', this)">Publications and Patents</button>
+      </div>
+
+      <!-- MAIN DYNAMIC CONTENT AREA -->
+      <div class="col-lg-9 col-md-8">
+
+        <!-- 1. PROFESSIONAL EXPERIENCE -->
+        <div id="exp" class="content-panel active">
+          <h2 class="section-heading"><i class="fas fa-briefcase me-2"></i>Professional Experience</h2>
+          
+          <div class="item-card">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <div class="item-title">Senior Analyst, Business Controls & Data Analytics</div>
+                <div class="item-subtitle">EPCOR | Utility Operations & Regulatory Compliance</div>
+              </div>
+              <span class="badge bg-secondary">Jan 2026 – Aug 2026</span>
+            </div>
+            <ul>
+              <li>Prepared, executed, and submitted recurring time-sensitive reporting packages for AESO, MSA, and Statistics Canada, ensuring 100% compliance with AUC Rules 021, 004, and 002.</li>
+              <li>Partnered with Customer Connections Senior PMs to architect 3 end-to-end Power BI dashboards (Rebate Tracking, Urban Infill, Customer Engineering).</li>
+              <li>Maintained a portfolio of ~15 active Power BI dashboards across Meter Data & Billing and Meter Operations.</li>
+              <li>Analyzed 15-minute interval Advanced Metering Infrastructure (AMI) demand (kW) and consumption (kWh) using SQL, Python, and Excel.</li>
+            </ul>
+            <div>
+              <span class="tag-badge">Power BI & DAX</span>
+              <span class="tag-badge">SQL</span>
+              <span class="tag-badge">Python</span>
+              <span class="tag-badge">AUC Rules</span>
+            </div>
+          </div>
+
+          <div class="item-card">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <div class="item-title">Operations Training Reporting Analyst</div>
+                <div class="item-subtitle">Enbridge | Pipeline Operations & Change Management</div>
+              </div>
+              <span class="badge bg-secondary">Nov 2024 – Aug 2025</span>
+            </div>
+            <ul>
+              <li>Architected a custom Microsoft Power Apps canvas app to streamline training workflows and delivered end-to-end change management documentation.</li>
+              <li>Designed and maintained Power BI dashboards using Power Query and DAX to track operational training compliance and executive KPIs.</li>
+            </ul>
+            <div>
+              <span class="tag-badge">Power Apps</span>
+              <span class="tag-badge">Power BI</span>
+              <span class="tag-badge">DAX</span>
+              <span class="tag-badge">SharePoint</span>
+            </div>
+          </div>
+
+          <div class="item-card">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <div class="item-title">Research Associate — Process Control & Machine Learning</div>
+                <div class="item-subtitle">University of Alberta | Industrial Automation Labs</div>
+              </div>
+              <span class="badge bg-secondary">Sep 2012 – May 2022</span>
+            </div>
+            <ul>
+              <li>Applied supervised ML models to detect water-bitumen interface levels in Primary Separation Vessels for oil sands operations (Suncor).</li>
+              <li>Developed unsupervised Multivariate Statistical Process Control models for early flare event prediction and pump failure detection (Emerson/Suncor).</li>
+              <li>Managed Process Control & Smart Automation Labs equipped with DeltaV DCS, Opto22, and Matrikon OPC servers.</li>
+            </ul>
+            <div>
+              <span class="tag-badge">Python</span>
+              <span class="tag-badge">MATLAB</span>
+              <span class="tag-badge">DeltaV DCS</span>
+              <span class="tag-badge">Process Control</span>
+            </div>
+          </div>
+
+          <div class="item-card">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <div class="item-title">R&D Officer — Automation & Optimization</div>
+                <div class="item-subtitle">Industrial Research Centre of Québec (CRIQ)</div>
+              </div>
+              <span class="badge bg-secondary">Nov 2010 – Mar 2012</span>
+            </div>
+            <ul>
+              <li>Designed Model Predictive Control (MPC) and neural network optimization for industrial ring debarking machines, boosting yield by ~30%.</li>
+              <li>Co-authored Canadian Patent CA 2780202 for automated wood quality detection.</li>
+            </ul>
+            <div>
+              <span class="tag-badge">Model Predictive Control</span>
+              <span class="tag-badge">Neural Networks</span>
+              <span class="tag-badge">Patent CA 2780202</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. ALL PROJECTS -->
+        <div id="projects" class="content-panel">
+          <h2 class="section-heading"><i class="fas fa-cubes me-2"></i>All Interactive Projects</h2>
+          
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <div class="item-card h-100">
+                <div class="item-title">Urban Infill Analytics & Dashboard</div>
+                <p class="small text-muted">EPCOR Customer Connections</p>
+                <p>Identified re-development density inside mature neighborhoods to forecast electrical load growth and infrastructure upgrade costs.</p>
+                <div class="media-box"><i class="fas fa-chart-bar me-2"></i>[ Interactive Power BI Embed ]</div>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <div class="item-card h-100">
+                <div class="item-title">Training Workflow Power App</div>
+                <p class="small text-muted">Enbridge Operations</p>
+                <p>Streamlined training tracking into a structured, automated canvas app connected to executive Power BI reporting.</p>
+                <div class="media-box"><i class="fas fa-mobile-alt me-2"></i>[ App Walkthrough / Demo ]</div>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <div class="item-card h-100">
+                <div class="item-title">Early Gas Flare Event Prediction</div>
+                <p class="small text-muted">University of Alberta / Emerson</p>
+                <p>Hierarchically distributed statistical monitoring for autocorrelated plant data to predict flaring events ahead of time.</p>
+                <div class="media-box"><i class="fab fa-youtube me-2"></i>[ YouTube Model Demo ]</div>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <div class="item-card h-100">
+                <div class="item-title">Ring Debarker MPC Optimization</div>
+                <p class="small text-muted">Industrial Research Centre of Québec</p>
+                <p>Optimized radial force and feed speed to minimize wood fiber loss using neural networks and Sequential Quadratic Programming.</p>
+                <div class="media-box"><i class="fas fa-cogs me-2"></i>[ Simulation & Patent Data ]</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. MACHINE LEARNING -->
+        <div id="ml" class="content-panel">
+          <h2 class="section-heading"><i class="fas fa-brain me-2"></i>Machine Learning & Advanced Analytics</h2>
+          
+          <div class="item-card">
+            <div class="item-title">Supervised & Unsupervised Industrial ML</div>
+            <p>Applied classification algorithms to detect water-bitumen interface levels in oil sands primary separation vessels and developed PCA/Slow Feature Analysis (SFA) models for fault detection in rotating equipment.</p>
+          </div>
+
+          <div class="item-card">
+            <div class="item-title">Reinforcement Learning & Autonomous Control</div>
+            <p>Research expertise in reinforcement learning (RL) applied to process industries, including survey publications on RL architectures and autonomous PID loop tuning algorithms.</p>
+          </div>
+
+          <div class="item-card">
+            <div class="item-title">Multivariate Statistical Process Control (MSPC)</div>
+            <p>Built fault-detection frameworks for high-dimensional, autocorrelated industrial sensor streams using wavelet transformations and distributed monitoring topologies.</p>
+          </div>
+        </div>
+
+        <!-- 4. INDUSTRIAL DOMAINS -->
+        <div id="domains" class="content-panel">
+          <h2 class="section-heading"><i class="fas fa-industry me-2"></i>Industrial Domains & Regulatory Frameworks</h2>
+          
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <div class="item-card h-100">
+                <div class="item-title">Electric Utility Operations & Compliance</div>
+                <ul>
+                  <li><strong>AUC Compliance:</strong> Rules 021, 004, 002</li>
+                  <li><strong>Market Authorities:</strong> AESO, MSA, Statistics Canada</li>
+                  <li><strong>Analytics:</strong> 15-min AMI Interval Demand & Consumption</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <div class="item-card h-100">
+                <div class="item-title">Process Automation & Control Systems</div>
+                <ul>
+                  <li><strong>Distributed Control Systems:</strong> DeltaV DCS, SCADA, Matrikon OPC</li>
+                  <li><strong>Advanced Control:</strong> MPC, Autonomous PID Tuning</li>
+                  <li><strong>Industries:</strong> Oil Sands, Chemical Processing, Sawmills</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. EDUCATION -->
+        <div id="education" class="content-panel">
+          <h2 class="section-heading"><i class="fas fa-graduation-cap me-2"></i>Education & Professional Credentials</h2>
+          
+          <div class="item-card">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <div class="item-title">Ph.D. in Computer Science & Industrial Automation</div>
+                <div class="item-subtitle">WES Certified Academic Credential</div>
+              </div>
+              <i class="fas fa-university fa-2x text-muted"></i>
+            </div>
+            <p class="mt-2">Specialized in Advanced Process Control, Machine Learning, and Industrial Automation Systems.</p>
+          </div>
+
+          <div class="item-card">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <div class="item-title">Professional Engineer (P.Eng.)</div>
+                <div class="item-subtitle">APEGA (Association of Professional Engineers and Geoscientists of Alberta)</div>
+              </div>
+              <i class="fas fa-certificate fa-2x text-success"></i>
+            </div>
+            <p class="mt-2">Registered Professional Engineer in the Province of Alberta, Canada.</p>
+          </div>
+        </div>
+
+        <!-- 6. PUBLICATIONS AND PATENTS -->
+        <div id="publications" class="content-panel">
+          <h2 class="section-heading"><i class="fas fa-book me-2"></i>Publications and Patents</h2>
+          
+          <div class="item-card">
+            <div class="item-title">Canadian Patent</div>
+            <p><strong>CA 2780202:</strong> <em>Method and System for Detecting and Controlling the Quality of Debarking at the Surface of a Wooden Log.</em></p>
+          </div>
+
+          <div class="item-card">
+            <div class="item-title">Selected Peer-Reviewed Journal Articles</div>
+            <ul>
+              <li class="mb-2"><strong>IEEE Survey:</strong> <em>Reinforcement Learning in Process Industries: Review and Perspective</em> (IEEE/CAA Journal of Automatica Sinica, 2024).</li>
+              <li class="mb-2"><strong>Process Control:</strong> <em>Reinforcement Learning Approach to Autonomous PID Tuning</em> (Computers & Chemical Engineering, 2022).</li>
+              <li class="mb-2"><strong>Environmental Sensing:</strong> <em>Early Determination of Toxicant Concentration in Water Supply Using MHE</em> (Water Research, 2010).</li>
+              <li class="mb-2"><strong>Industrial SPM:</strong> <em>Hierarchically Distributed Monitoring for the Early Prediction of Gas Flare Events</em> (Ind. Eng. Chem. Res., 2019).</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showPanel(panelId, btnElement) {
+      // Hide all panels
+      const panels = document.querySelectorAll('.content-panel');
+      panels.forEach(panel => panel.classList.remove('active'));
+
+      // Deactivate all buttons
+      const buttons = document.querySelectorAll('.nav-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+
+      // Activate selected panel and button
+      document.getElementById(panelId).classList.add('active');
+      btnElement.classList.add('active');
+    }
+  </script>
+</body>
+</html>
